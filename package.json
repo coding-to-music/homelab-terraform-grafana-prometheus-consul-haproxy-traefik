@@ -1,0 +1,21 @@
+{
+  "name": "homelab-terraform-grafana-prometheus-consul-haproxy-traefik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "git add . && git commit -m Build && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nahsi-homelab/observability.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nahsi-homelab/observability/issues"
+  },
+  "homepage": "https://github.com/nahsi-homelab/observability#readme"
+}
