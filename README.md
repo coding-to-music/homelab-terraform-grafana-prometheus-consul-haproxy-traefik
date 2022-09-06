@@ -132,3 +132,37 @@ git branch -M main
 git remote add origin git@github.com:coding-to-music/homelab-terraform-grafana-prometheus-consul-haproxy-traefik.git
 git push -u origin main
 ```
+
+# Install Consul Server
+
+https://blog.marcsg.com/consul-service-discovery-with-prometheus-and-grafana
+
+```
+# Update and install gnupg2 and curl for the following commands
+apt-get update && apt-get install gnupg2 curl lsb-release
+
+# Add consul's gpg key
+curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
+
+# Add hashicorp's repository to our sources.list
+echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/hashicorp.list
+
+# Update and install consul
+apt-get update && apt-get install consul
+
+# Check Consul installation version
+consul -v
+```
+
+## Status
+
+```
+terraform init
+
+# output
+
+Initializing the backend...
+
+Error: Failed to get existing workspaces: Get "https://consul.service.consul/v1/kv/terraform/observability-env:?keys=&separator=%2F": dial tcp: lookup consul.service.consul on 127.0.0.53:53: no such host
+
+```
